@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Function to convert hex to decimal
+hex_to_dec() {
+    echo "$((16#$1))"
+}
+
+# Prompt the user for input if stdin is empty
+if [ -t 0 ]; then
+    echo "Please enter a hex color code (e.g., #FFAABB):"
+fi
+
+# Read input from stdin
+read hex_color
+
+# Remove the leading '#' if it's present
+hex_color=$(echo "$hex_color" | sed -e 's/#//' -e 's/"//g')
+
+# Make sure the input is 6 characters long
+if [ ${#hex_color} -ne 6 ]; then
+    echo "Invalid hex color. Please provide a valid 6-character hex color code."
+    exit 1
+fi
+
+# Extract the R, G, B components
+r_hex=${hex_color:0:2}
+g_hex=${hex_color:2:2}
+b_hex=${hex_color:4:2}
+
+# Convert hex to decimal
+r=$(hex_to_dec "$r_hex")
+g=$(hex_to_dec "$g_hex")
+b=$(hex_to_dec "$b_hex")
+
+# Output the result
+echo "Color=$r,$g,$b"
