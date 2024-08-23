@@ -8,17 +8,18 @@ VSCode Monokai theme to deliver the true experience.
 Follow these steps to install the Monokai theme for Konsole:
 
 1.  **Clone the Repository:**
-    Clone this repository or download the `Monokai.colorscheme` file.
+    Clone this repository or download the [`Monokai.colorscheme`](https://github.com/edyfox/monokai-konsole/raw/main/Monokai.colorscheme)
+    file.
     ```bash
     git clone https://github.com/edyfox/monokai-konsole.git
     cd monokai-konsole
     ```
-2.  **Copy the Theme File:** 
+3.  **Copy the Theme File:** 
     Copy Monokai.colorscheme to Konsole's color schemes directory:
     ```bash
     cp Monokai.colorscheme ~/.local/share/konsole/
     ```
-3.  **Apply the Theme:**
+4.  **Apply the Theme:**
     Open Konsole and go to `Settings > Edit Current Profile`.
     Select the `Appearance` tab, find `Monokai` in the list, select it, and click the `OK` button.
 
